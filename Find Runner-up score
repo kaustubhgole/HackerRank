@@ -1,0 +1,14 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    
+    ru=list(arr)
+    
+    ru.sort()
+    
+    k= ru[-1]
+    
+    for i in range(len(ru)):
+        if ru[i] >= k:
+            print(ru[i-1])
+            break 
