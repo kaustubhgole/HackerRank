@@ -1,0 +1,31 @@
+if __name__ == '__main__':
+    n=int(input())
+    x=[]
+    y=[]
+    for _ in range(n):
+        name = input()
+        score = float(input())
+        x.append(name)
+        y.append(score)
+    
+    zipped = [list(t) for t in zip(y, x)]
+    zipped.sort()
+    count=0
+    temp=[]
+    k=zipped[0][0]
+    for i in range(n):
+        if k==zipped[i][0]:
+            count+=1
+    
+    if count==1:
+        k=zipped[1][0]
+    else:
+        k=zipped[count][0]
+        
+    
+    for i in range(n):
+        if k==zipped[i][0]:
+            temp.append(zipped[i][1])
+    temp.sort()        
+    for i in temp:
+        print(i)
