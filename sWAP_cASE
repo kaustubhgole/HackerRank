@@ -1,0 +1,26 @@
+def swap_case(s):
+    temp=[]
+    special_characters = "\'\|\;\:\"\!\@\#\$\%\^\&\*\(\)\-\+\?\_\=\,\<\>/\ \."
+    for i in range(len(s)):
+        temp+=s[i]
+    new=""
+    for _ in temp:
+        if _ in special_characters:
+            new+=_
+            continue    
+        elif _.isnumeric():
+            new+=_
+            continue
+        elif _.isupper():
+            _=_.lower()
+            new+=_
+        elif _.islower():
+            _=_.upper()
+            new+=_
+    
+    return new
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)	
