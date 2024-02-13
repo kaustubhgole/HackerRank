@@ -1,0 +1,20 @@
+def minion_game(string):
+    vow=set('AEIOU')
+    l=len(string)
+    ke=st=0
+    for i, lett in enumerate(string):
+        if lett in vow:
+            ke += l-i
+        else:
+            st += l-i
+        
+    if ke>st:
+        print("Kevin", ke)
+    elif st>ke:
+        print("Stuart", st)
+    elif ke==st:
+        print('Draw')
+               
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
